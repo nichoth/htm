@@ -1,5 +1,5 @@
 {
-  "name": "htm",
+  "name": "@nichoth/htm",
   "version": "3.1.2",
   "description": "The Tagged Template syntax for Virtual DOM. Only browser-compatible syntax.",
   "main": "dist/htm.js",
