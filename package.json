@@ -12,36 +12,37 @@
       "browser": "./dist/htm.module.js",
       "umd": "./dist/htm.umd.js",
       "import": "./dist/htm.mjs",
-      "require": "./dist/htm.js"
-    },
-    "./": "./",
-    "./preact": {
-      "types": "./preact/index.d.ts",
-      "browser": "./preact/index.module.js",
-      "umd": "./preact/index.umd.js",
-      "import": "./preact/index.mjs",
-      "require": "./preact/index.js"
-    },
-    "./preact/standalone": {
-      "types": "./preact/index.d.ts",
-      "browser": "./preact/standalone.module.js",
-      "umd": "./preact/standalone.umd.js",
-      "import": "./preact/standalone.mjs",
-      "require": "./preact/standalone.js"
-    },
-    "./react": {
-      "types": "./react/index.d.ts",
-      "browser": "./react/index.module.js",
-      "umd": "./react/index.umd.js",
-      "import": "./react/index.mjs",
-      "require": "./react/index.js"
-    },
-    "./mini": {
-      "types": "./mini/index.d.ts",
-      "browser": "./mini/index.module.js",
-      "umd": "./mini/index.umd.js",
-      "import": "./mini/index.mjs",
-      "require": "./mini/index.js"
+      "require": "./dist/htm.js",
+
+      "/preact": {
+        "types": "./preact/index.d.ts",
+        "browser": "./preact/index.module.js",
+        "umd": "./preact/index.umd.js",
+        "import": "./preact/index.mjs",
+        "require": "./preact/index.js"
+      },
+
+      "/preact/standalone": {
+        "types": "./preact/index.d.ts",
+        "browser": "./preact/standalone.module.js",
+        "umd": "./preact/standalone.umd.js",
+        "import": "./preact/standalone.mjs",
+        "require": "./preact/standalone.js"
+      },
+      "/react": {
+        "types": "./react/index.d.ts",
+        "browser": "./react/index.module.js",
+        "umd": "./react/index.umd.js",
+        "import": "./react/index.mjs",
+        "require": "./react/index.js"
+      },
+      "/mini": {
+        "types": "./mini/index.d.ts",
+        "browser": "./mini/index.module.js",
+        "umd": "./mini/index.umd.js",
+        "import": "./mini/index.mjs",
+        "require": "./mini/index.js"
+      }
     }
   },
   "scripts": {
@@ -56,7 +57,8 @@
     "test": "eslint src/**/*.mjs test/**/*.mjs --ignore-path .gitignore && npm run build && jest test",
     "test:perf": "v8 test/__perftest.mjs",
     "test:dist": "npm pack && mv htm*.tgz test/fixtures/esm/htm.tgz && cd test/fixtures/esm && npm install && node index.js",
-    "release": "npm t && git commit -am \"$npm_package_version\" && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "release": "npm t && git commit -am \"$npm_package_version\" && git tag $npm_package_version && git push && git push --tags && npm publish",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist",

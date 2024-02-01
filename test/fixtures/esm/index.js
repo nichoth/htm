@@ -9,6 +9,8 @@ assert(typeof htm === 'function', 'import htm from "htm"');
 
 assert(typeof preact.html === 'function', 'import { html } from "preact"');
 
+assert(typeof preact.useRef === 'function', 'should export hooks');
+
 assert(typeof standalone.html === 'function', 'import { html } from "preact/standalone"');
 
 console.log('✅ Dist Tests Passed');
