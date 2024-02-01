@@ -1,5 +1,5 @@
 {
-  "name": "@nichoth/htm",
+  "name": "htm",
   "version": "3.1.1",
   "description": "The Tagged Template syntax for Virtual DOM. Only browser-compatible syntax.",
   "main": "dist/htm.js",
@@ -14,28 +14,29 @@
       "import": "./dist/htm.mjs",
       "require": "./dist/htm.js"
     },
-    "/preact": {
+    "./": "./",
+    "./preact": {
       "types": "./preact/index.d.ts",
       "browser": "./preact/index.module.js",
       "umd": "./preact/index.umd.js",
       "import": "./preact/index.mjs",
       "require": "./preact/index.js"
     },
-    "/preact/standalone": {
+    "./preact/standalone": {
       "types": "./preact/index.d.ts",
       "browser": "./preact/standalone.module.js",
       "umd": "./preact/standalone.umd.js",
       "import": "./preact/standalone.mjs",
       "require": "./preact/standalone.js"
     },
-    "/react": {
+    "./react": {
       "types": "./react/index.d.ts",
       "browser": "./react/index.module.js",
       "umd": "./react/index.umd.js",
       "import": "./react/index.mjs",
       "require": "./react/index.js"
     },
-    "/mini": {
+    "./mini": {
       "types": "./mini/index.d.ts",
       "browser": "./mini/index.module.js",
       "umd": "./mini/index.umd.js",
@@ -55,8 +56,7 @@
     "test": "eslint src/**/*.mjs test/**/*.mjs --ignore-path .gitignore && npm run build && jest test",
     "test:perf": "v8 test/__perftest.mjs",
     "test:dist": "npm pack && mv htm*.tgz test/fixtures/esm/htm.tgz && cd test/fixtures/esm && npm install && node index.js",
-    "release": "npm t && git commit -am \"$npm_package_version\" && git tag $npm_package_version && git push && git push --tags && npm publish",
-    "prepublishOnly": "npm run build"
+    "release": "npm t && git commit -am \"$npm_package_version\" && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "files": [
     "dist",
@@ -114,8 +114,8 @@
     "@types/jest": "^26.0.24",
     "babel-jest": "^24.1.0",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^8.56.0",
-    "eslint-config-developit": "^1.2.0",
+    "eslint": "^5.2.0",
+    "eslint-config-developit": "^1.1.1",
     "jest": "^24.1.0",
     "microbundle": "^0.10.1",
     "preact": "^10.2.0",
